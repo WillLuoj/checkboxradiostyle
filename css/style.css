@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+form {
+    width: 50%;
+    top: 50%;
+    margin:0 auto;
+}
+
+input {
+    display: none;
+}
+/*背景图片*/
+.radio+label,.checkbox+label {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.radio+label {
+    width: 16px;
+    height: 16px;
+}
+.checkbox+label {
+    height: 14px;
+    width: 14px;
+}
+.radio+label {
+    background: url("../image/icon.png") 0 -28px no-repeat  ;
+
+}
+.radio:checked+label{
+    background: url("../image/icon.png") 0 -45px no-repeat;
+}
+.checkbox+label {
+    background: url("../image/icon.png") 0 -14px no-repeat  ;
+}
+.checkbox:checked+label {
+    background: url("../image/icon.png") 0 0 no-repeat  ;
+}
+/*用css伪元素实现*/
+.radio1+label,.checkbox1+label {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #D9D9D9;
+    margin-bottom: 20px;
+}
+.radio1+label {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.radio1:checked+label {
+    border: 1px solid #D73E33;
+    text-align: center;
+    line-height: 14px;
+}
+.radio1:checked+label::after {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #D73E33;
+    content: '';
+}
+.checkbox1:checked+label {
+    border: 1px solid #D73E33;
+    position: relative;
+}
+
+.checkbox1:checked+label::after {
+    display: inline-block;
+    content: '\2713'; /*unicode 对号*/
+    color: #D73E33;
+    position: absolute;
+    top: -4px;
+    left: 3px;
+}
